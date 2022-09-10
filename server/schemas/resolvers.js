@@ -40,7 +40,7 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        addBook: async (parent, args, context) => {
+        saveBook: async (parent, args, context) => {
             if (context.user) {
                 const book = await User.create({ ...args, username: context.user.username});
 
@@ -59,7 +59,7 @@ const resolvers = {
             if (context.user) {
                 const book = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { books: { _id: args._id} } },
+                    { $pull: { books: { bookId: args.bookId } } },
                     { new: true }
                 );
 

@@ -16,6 +16,6 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "apollo": "^2.34.0",
+    "apollo": "^2.34.0"
   }
 }
